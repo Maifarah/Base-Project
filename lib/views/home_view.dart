@@ -1,3 +1,5 @@
+import 'package:base_project/widgets/custom_appbar.dart';
+import 'package:base_project/widgets/note_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -5,12 +7,15 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Base App'),
-      ),
-      body: const Center(
-        child: Text('Hello World'),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.only(top: 20, left: 24, right: 24),
+        child: Column(
+          children: [
+            CustomAppBar(),
+            NoteItem(),
+          ],
+        ),
       ),
     );
   }
