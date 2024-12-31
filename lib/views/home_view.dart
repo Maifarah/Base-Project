@@ -1,6 +1,7 @@
 import 'package:base_project/widgets/custom_appbar.dart';
 import 'package:base_project/widgets/note_item.dart';
 import 'package:base_project/widgets/notes_list_view.dart';
+import 'package:base_project/widgets/notes_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,18 +9,14 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(top: 20, left: 24, right: 24),
-        child: Column(
-          children: [
-            CustomAppBar(),
-            Expanded(
-              child: NotesListView(),
-            ),
-          ],
-        ),
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        // elevation: 0,
+        onPressed: () {},
+        child: const Icon(Icons.add),
       ),
+      body: const NotesView(),
     );
   }
 }
