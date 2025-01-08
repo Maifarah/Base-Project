@@ -1,6 +1,6 @@
 import 'package:base_project/constants.dart';
 import 'package:base_project/widgets/model_buttom_sheet.dart';
-import 'package:base_project/widgets/notes_view.dart';
+import 'package:base_project/views/notes_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
