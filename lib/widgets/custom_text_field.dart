@@ -12,18 +12,23 @@ class CustomTextField extends StatelessWidget {
   final int maxLines;
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      maxLines: maxLines,
-      cursorColor: kPrimaryColor,
-      decoration: InputDecoration(
-        hintText: hint,
-        hintStyle: const TextStyle(
-          color: Colors.grey,
+    return Focus(child: Builder(builder: (context) {
+      bool isFocusd = Focus.of(context).hasFocus;
+      return TextField(
+        maxLines: maxLines,
+        cursorColor: kPrimaryColor,
+        decoration: InputDecoration(
+          hintText: hint,
+          hintStyle: TextStyle(
+            color: isFocusd ? kPrimaryColor : Colors.grey,
+          ),
+          focusColor: kPrimaryColor,
+          border: buildBorder(),
+          focusedBorder: buildBorder(kPrimaryColor),
+          // focusColor: kPrimaryColor,
         ),
-        border: buildBorder(),
-        focusedBorder: buildBorder(kPrimaryColor),
-      ),
-    );
+      );
+    }));
   }
 
   OutlineInputBorder buildBorder([color]) {
